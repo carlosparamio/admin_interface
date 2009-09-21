@@ -1,0 +1,305 @@
+!main_color = #bb6611
+
+!header_bg_color = !main_color
+!header_color= #fff
+!body_bg_color = #e5e5e5
+!body_color = #000
+!links_color = !main_color
+!success_color = #264409
+!success_bg_color = #e6efc2
+!success_border_color = #c6d880
+!notice_color = #514721
+!notice_bg_color = #fff6bf
+!notice_border_color = #ffd324
+!error_color = #8a1f11
+!error_bg_color = #fbe3e4
+!error_border_color = #fbc2c4
+!panel_header_color = !header_color
+!panel_header_bg_color = !header_bg_color + #333
+!panel_footer_color = !header_color
+!panel_footer_bg_color = !header_bg_color + #333
+!even_bg_color = #f7f7f7
+!tips_color = #777
+!fonts = "Lucida Grande", "Lucida Sans Unicode", verdana, helvetica, arial, sans-serif
+
+=tabs
+  :margin 0
+  :padding 0
+  :list-style none
+
+  li
+    :display inline
+
+    a
+      :padding 5px 10px
+      :color = !header_color
+      :background-color = !header_bg_color + #222
+      :text-decoration none
+    
+      &:hover
+        :background-color = !header_bg_color - #222
+        :text-decoration underline
+
+    span
+      :padding 5px 10px
+      :color = !body_color
+      :background-color = !body_bg_color
+
+body
+  :font-size 12px
+  :font-family= !fonts
+  :margin 0
+  :padding 0
+  :color = !body_color
+  :background-color = !body_bg_color
+
+a
+  :color = !links_color
+  :padding 1px 2px
+
+  &:hover
+    :background-color = !header_bg_color
+    :color = !header_color
+    :text-decoration none
+
+#header
+  :position relative
+  :height 60px
+  :padding 10px 30px
+  :color = !header_color
+  :background-color = !header_bg_color
+
+  h1
+    :position absolute
+    :bottom 40px
+    :left 40px
+    :margin 0
+    :font-size 24px
+    :font-weight normal
+
+ul#header_links
+  :position absolute
+  :bottom 40px
+  :right 40px
+  :margin 0
+  :padding 0
+  :list-style none
+  :line-height 20px
+  :text-align right
+  :font-size 80%
+  
+  li
+    :display inline
+    
+    a
+      :color = !header_color
+      :text-decoration underline
+      
+      &:hover
+        :background-color = !header_bg_color - #222
+
+ul#primary_tabs
+  :position absolute
+  :left 40px
+  :bottom 5px
+  +tabs
+
+ul#secondary_tabs
+  :position absolute
+  :right 40px
+  :bottom 5px
+  +tabs
+
+#success
+  :margin 5px 0
+  :padding 10px 10px 10px 40px
+  :color = !success_color
+  :background-color = !success_bg_color
+  :background-image url(/images/admin/success_icon.png)
+  :background-position 10px 10px
+  :background-repeat no-repeat
+  :border= 1px "solid" !success_border_color
+
+#notice
+  :margin 10px 0
+  :padding 10px 10px 10px 40px
+  :color = !notice_color
+  :background-color = !notice_bg_color
+  :background-image url(/images/admin/notice_icon.png)
+  :background-position 10px 10px
+  :background-repeat no-repeat
+  :border= 1px "solid" !notice_border_color
+
+#error
+  :margin 5px 0
+  :padding 10px 10px 10px 40px
+  :color = !error_color
+  :background-color = !error_bg_color
+  :background-image url(/images/admin/error_icon.png)
+  :background-position 10px 10px
+  :background-repeat no-repeat
+  :border= 1px "solid" !error_border_color
+
+#panel
+  :float left
+  :margin 20px 0 10px 30px
+  :padding 0 0 7px 0
+  :text-align left
+  :min-width 600px
+  :width 70%
+  :background-image url(/images/admin/panel_bg.gif)
+  :background-position right bottom
+  :background-repeat no-repeat
+
+  table
+    :width 100%
+
+#panel_header
+  :color = !panel_header_color
+  :background-color = !panel_header_bg_color
+  :background-image url(/images/admin/panel_content_bg.gif)
+  :background-position right top
+  :background-repeat repeat-y
+  :margin 0
+  :padding 10px 20px
+  :font-size 14px
+  :font-weight bold
+
+#panel_header_links
+  :float right
+  :font-size 10px
+  :padding 4px 5px
+  
+  a
+    :color= !panel_header_color
+
+#panel_content
+  :padding 10px 20px
+  :background-color #fff
+  :background-image url(/images/admin/panel_content_bg.gif)
+  :background-position right top
+  :background-repeat repeat-y
+
+#panel_footer
+  :color = !panel_header_color
+  :background-color = !panel_header_bg_color
+  :background-image url(/images/admin/panel_content_bg.gif)
+  :background-position right top
+  :background-repeat repeat-y
+  :margin 0
+  :padding 10px 20px
+  
+  a
+    :color= !panel_footer_color
+
+#sidebar
+  :float left
+  :width 20%
+  :min-width 200px
+  :margin 20px 10px
+
+#footer
+  :clear both
+  :margin 10px 50px
+  :font-size 90%
+
+  a
+    :font-weight bold
+    :color = !links_color
+    :text-decoration none
+    
+    &:hover
+      :color #fff
+
+form
+  :margin 0
+
+  label
+    :font-weight none
+
+  .tips
+    :font-size 0.7em
+    :color = !tips_color
+  
+  .radio_group, .check_box
+    .tips
+      :font-size 1em
+      :color inherit
+
+  .required label
+    :font-weight bold
+    &:after
+      :content " * "
+
+  fieldset
+    :border none
+    :border-top 5px solid #eee
+    :padding 2px
+    
+    &.important
+      :border 1px solid #d9d9d9
+      :background-color #efefef
+      :padding 0
+      :color #333
+
+  fieldset.important + fieldset
+    :border-top none
+
+  dl
+    :border 1px solid #fff
+    :margin 0
+    :padding 10px
+    
+  dd
+    :margin 3px 0 10px 0
+  
+  dd:last-child
+    :margin-bottom 0
+
+  input,  textarea,  select
+    :color #000
+    :padding 3px
+    :font-size 12px
+
+  textarea
+    :width 98%
+    :height 80px
+    :font-family= !fonts
+    :font-size 12px
+    :resize vertical
+
+  .title
+    :width 98%
+    :font-size 18px
+    :font-weight bold
+
+table
+  :border-collapse collapse
+
+th
+  :font-size 14px
+  :padding 5px 10px 5px 0
+  :vertical-align top
+
+td
+  :padding 5px 10px 5px 0
+  :vertical-align top
+
+.even
+  :background-color = !even_bg_color
+
+.pagination
+  :padding 10px 0
+  
+  a, span
+    :padding 5px
+    :border 1px solid #ddd
+    :text-decoration none
+    :color #000
+  
+  a:hover
+    :color = !header_color
+  
+  .current
+    :color = !header_color
+    :background-color = !header_bg_color
