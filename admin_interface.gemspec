@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.summary     = "AdminInterface provides helpers and default styles for the admin area of Evolve Studio projects."
   s.description = "AdminInterface provides helpers and default styles for the admin area of Evolve Studio projects."
 
-  s.files = [ "README.markdown",
+  s.files = [ "README.rdoc",
               "generators",
               "lib",
               "rails" ]
