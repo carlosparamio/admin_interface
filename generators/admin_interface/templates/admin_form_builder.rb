@@ -6,8 +6,10 @@ class AdminFormBuilder < ActionView::Helpers::FormBuilder #:nodoc:
       label = extract_label(accessor_method, options)
       tips = extract_tips(options)
       klass = extract_class(method_name, options)
-      @template.content_tag("dt", "#{label} #{tips}", :class => klass) +
-      @template.content_tag("dd", content, :class => klass)
+      prefix = extract_prefix(options)
+      suffix = extract_suffix(options)
+      @template.content_tag("dt", "#{prefix} #{label} #{tips}", :class => klass) +
+      @template.content_tag("dd", "#{content} #{suffix}", :class => klass)
     end
     
     def post_labeled_field(method_name, content, accessor_method, *args)
@@ -15,8 +17,10 @@ class AdminFormBuilder < ActionView::Helpers::FormBuilder #:nodoc:
       label = extract_label(accessor_method, options)
       tips = extract_tips(options)
       klass = extract_class(method_name, options)
-      @template.content_tag(:dt, tips, :class => klass) +
-      @template.content_tag(:dd, "#{content} #{label}", :class => klass)
+      prefix = extract_prefix(options)
+      suffix = extract_suffix(options)
+      @template.content_tag(:dt, "#{prefix} #{tips}", :class => klass) +
+      @template.content_tag(:dd, "#{content} #{label} #{suffix}", :class => klass)
     end
     
     def extract_options(args)
@@ -36,6 +40,14 @@ class AdminFormBuilder < ActionView::Helpers::FormBuilder #:nodoc:
     def extract_class(method_name, options)
       required = options.delete(:required) || false
       required ? "required #{method_name}" : method_name
+    end
+    
+    def extract_prefix(options)
+      options.delete(:prefix)
+    end
+    
+    def extract_suffix(options)
+      options.delete(:suffix)
     end
     
   public
