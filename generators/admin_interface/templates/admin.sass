@@ -21,6 +21,7 @@
 !even_bg_color = #f7f7f7
 !tips_color = #777
 !fonts = "Lucida Grande", "Lucida Sans Unicode", verdana, helvetica, arial, sans-serif
+!field_error_bg_color = #ffe6e6
 
 =tabs
   :margin 0
@@ -213,6 +214,9 @@ ul#secondary_tabs
 
 form
   :margin 0
+
+  .fieldWithErrors *
+    :background-color= !field_error_bg_color #ffe6e6
 
   label
     :font-weight none
